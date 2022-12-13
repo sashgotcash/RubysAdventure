@@ -22,7 +22,7 @@ public class RubyController : MonoBehaviour
     float vertical;
 
     Animator animator;
-    Vector2 lookDirection = new Vector2(1, 0);
+    Vector2 lookDirection = new Vector2(1,0);
 
     //Start is called before the first frame update
     void Start()
@@ -92,7 +92,7 @@ public class RubyController : MonoBehaviour
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5, Quarterion.identity);
 
-        projectilePrefab projectile = projectileObject.GetComponent<projectile>();
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
